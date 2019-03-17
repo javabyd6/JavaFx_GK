@@ -1,8 +1,7 @@
 package Service;
 
+import Model.Weather;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import pl.sda.openweather.Model.Weather;
-
 import java.io.IOException;
 import java.net.URL;
 
@@ -26,10 +25,10 @@ public class WeatherService {
         ObjectMapper mapper = new ObjectMapper();
         URL www = new URL(finalURL + city);
 
-        Weather weather = mapper.readValue(www, Weather.class);
-        System.out.println("Temparatura w " + city + " wynosi: " + weather.getCurrent().getTemp_c() + " stopni C");
+//        Weather weather = mapper.readValue(www, Weather.class);
+//        System.out.println("Temparatura w " + city + " wynosi: " + weather.getCurrent().getTemp_c() + " stopni C");
 
-        return weather;
+        return mapper.readValue(www, Weather.class);
     }
 
 

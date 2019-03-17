@@ -2,19 +2,88 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:controller="controller.RootController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RootController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="city" layoutX="158.0" layoutY="72.0" />
-            <Button onAction="#setCity" fx:id="search" layoutX="318.0" layoutY="72.0" mnemonicParsing="false" text="Szukaj!" />
-            <Label fx:id="TemperatureIn" layoutX="158.0" layoutY="117.0" prefHeight="17.0" prefWidth="264.0" text="Temperatura odczuwalna" />
-            <Label layoutX="342.0" layoutY="117.0" />
-            <Label layoutX="158.0" layoutY="43.0" text="Podaj miasto" />
+            <TextField fx:id="cityName" layoutX="289.0" layoutY="63.0" prefHeight="25.0" prefWidth="245.0">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font></TextField>
+            <Label alignment="CENTER_RIGHT" layoutX="12.0" layoutY="67.0" prefHeight="23.0" prefWidth="274.0" text="Podaj miasto do sprawdzenia:">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font></Label>
+            <Button fx:id="search" layoutX="543.0" layoutY="63.0" mnemonicParsing="false" onAction="#setCity" prefHeight="23.0" prefWidth="90.0" text="Szukaj!">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font></Button>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="390.0" layoutY="213.0" prefHeight="19.0" prefWidth="230.0" text="Temperatura powietrza:" textAlignment="RIGHT">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font></Label>
+            <Label fx:id="temperatureIn" alignment="CENTER" layoutX="444.0" layoutY="244.0" prefHeight="23.0" prefWidth="136.0">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font></Label>
+            <Label alignment="CENTER_RIGHT" layoutX="52.0" layoutY="208.0" prefHeight="31.0" prefWidth="108.0" text="Pora dnia:">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="14.0" prefHeight="31.0" prefWidth="196.0" text="PALANTIR  ver. 0.9" textAlignment="RIGHT">
+               <font>
+                  <Font name="Trebuchet MS" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="173.0" prefHeight="19.0" prefWidth="164.0" text="Czas miejscowy:">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="localTime" layoutX="206.0" layoutY="171.0" prefHeight="23.0" prefWidth="390.0">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="timeOfDayImg" fitHeight="120.0" fitWidth="120.0" layoutX="56.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image" fitHeight="120.0" fitWidth="120.0" layoutX="452.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="140.0" prefHeight="23.0" prefWidth="164.0" text="Kraj:">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="country" layoutX="208.0" layoutY="143.0" prefHeight="19.0" prefWidth="390.0">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="-1.0" layoutY="205.0" prefHeight="0.0" prefWidth="640.0" />
+            <Separator layoutX="387.0" layoutY="207.0" orientation="VERTICAL" prefHeight="193.0" prefWidth="0.0" />
+            <Separator layoutX="3.0" layoutY="130.0" prefHeight="10.0" prefWidth="640.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="106.0" layoutY="103.0" prefHeight="31.0" prefWidth="180.0" text="Zobacz zdjecia:">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="googlePic" layoutX="292.0" layoutY="107.0" onMouseClicked="#openBrowser" prefHeight="23.0" prefWidth="238.0" textFill="#294ab5">
+               <font>
+                  <Font name="Courier New Italic" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="214.0" layoutY="207.0" orientation="VERTICAL" prefHeight="193.0" prefWidth="0.0" />
+            <ImageView fx:id="palantirPic" fitHeight="157.0" fitWidth="145.0" layoutX="233.0" layoutY="223.0" onMouseClicked="#openPalantirWWW" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@220px-Palantir_Stone.jpg" />
+               </image></ImageView>
          </children>
     </AnchorPane>
   </children>
