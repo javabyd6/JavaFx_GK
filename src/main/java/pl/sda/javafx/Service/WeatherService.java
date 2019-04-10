@@ -1,7 +1,8 @@
-package Service;
+package pl.sda.javafx.Service;
 
-import Model.Weather;
+import pl.sda.javafx.model.Weather;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.net.URL;
 

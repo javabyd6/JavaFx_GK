@@ -1,4 +1,4 @@
-package Model;
+package pl.sda.javafx.model;
 
 public class Condition {
 
